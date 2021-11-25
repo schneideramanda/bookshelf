@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { Grid } from '@material-ui/core';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import BookPage from './pages/BookPage';
+import { booksSelect } from './store/reducers/books';
+import Home from './pages/Home';
+import CategoryPage from './pages/CategoryPage';
 
-function App() {
+const App = () => {
+  const { books } = useSelector(booksSelect);
+
+  useEffect(() => {
+    window.localStorage.setItem('books', JSON.stringify(books));
+  }, [books]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Grid container direction='column'>
+        <Routes>
+          <Route path='' element={<Home />} />
+          <Route path='/books/:token' element={<BookPage />} />
+          <Route path='/categories/:id' element={<CategoryPage />} />
+        </Routes>
+      </Grid>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
