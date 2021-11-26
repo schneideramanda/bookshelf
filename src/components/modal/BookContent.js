@@ -45,16 +45,16 @@ const BookContent = () => {
 
   return (
     <Stack spacing={8}>
-      <Box component='form' onSubmit={handleSubmit}>
-        <Grid container direction='row' spacing={6}>
+      <Box component="form" onSubmit={handleSubmit}>
+        <Grid container direction="row" spacing={6}>
           <Grid item>
             <Box
-              display='flex'
-              bgcolor='#424242'
-              width='20rem'
-              height='100%'
-              justifyContent='center'
-              alignItems='center'
+              display="flex"
+              bgcolor="#424242"
+              width="20rem"
+              height="100%"
+              justifyContent="center"
+              alignItems="center"
             >
               Book
             </Box>
@@ -63,26 +63,26 @@ const BookContent = () => {
             <Stack spacing={6}>
               <TextField
                 required
-                id='title'
-                label='Title'
-                variant='standard'
+                id="title"
+                label="Title"
+                variant="standard"
                 onChange={({ target }) => setTitle(target.value)}
               />
               <TextField
                 required
-                id='author'
-                label='Author'
-                variant='standard'
+                id="author"
+                label="Author"
+                variant="standard"
                 onChange={({ target }) => setAuthor(target.value)}
               />
-              <FormControl required variant='standard'>
-                <InputLabel id='category-label'>Category *</InputLabel>
+              <FormControl required variant="standard">
+                <InputLabel id="category-label">Category *</InputLabel>
                 <Select
-                  labelId='category-label'
-                  id='category-id'
+                  labelId="category-label"
+                  id="category-id"
                   value={category}
                   onChange={handleChange}
-                  label='Category'
+                  label="Category"
                 >
                   {Object.entries(categories).map(([key, value]) => (
                     <MenuItem key={key} value={key}>
@@ -93,8 +93,8 @@ const BookContent = () => {
               </FormControl>
               <TextField
                 required
-                id='description'
-                label='Description'
+                id="description"
+                label="Description"
                 multiline
                 rows={4}
                 onChange={({ target }) => setDescription(target.value)}
@@ -102,8 +102,8 @@ const BookContent = () => {
             </Stack>
           </Grid>
         </Grid>
-        <Box display='flex' justifyContent='flex-end'>
-          <Button type='submit' variant='contained' sx={{ mt: 5 }}>
+        <Box display="flex" justifyContent="flex-end">
+          <Button type="submit" variant="contained" sx={{ mt: 5 }}>
             Add book
           </Button>
         </Box>

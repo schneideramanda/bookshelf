@@ -22,7 +22,7 @@ const BookModal = () => {
         sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
       >
         <Fade in={modal}>
-          <Box bgcolor='#303030' m={12} p={5} borderRadius={2}>
+          <Box bgcolor="#303030" m={12} p={5} borderRadius={2}>
             <BookContent />
           </Box>
         </Fade>

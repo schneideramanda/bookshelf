@@ -18,30 +18,30 @@ const Search = () => {
 
   return (
     <Box
-      display='flex'
-      justifyContent='space-between'
-      backgroundColor='#212121'
+      display="flex"
+      justifyContent="space-between"
+      backgroundColor="#212121"
       p={1}
       mt={5}
       ml={12}
       mr={12}
     >
-      <Button variant='contained' startIcon={<AddIcon />} onClick={handleClick}>
+      <Button variant="contained" startIcon={<AddIcon />} onClick={handleClick}>
         Add new book
       </Button>
       <Box>
         <IconButton
-          color='primary'
-          aria-label='sort name'
-          component='span'
+          color="primary"
+          aria-label="sort name"
+          component="span"
           onClick={() => dispatch(changeFilter('alphabet'))}
         >
           <SortByAlphaIcon />
         </IconButton>
         <IconButton
-          color='primary'
-          aria-label='sort date'
-          component='span'
+          color="primary"
+          aria-label="sort date"
+          component="span"
           onClick={() => dispatch(changeFilter('date'))}
         >
           <CalendarTodayIcon />
